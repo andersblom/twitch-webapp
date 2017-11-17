@@ -12,7 +12,8 @@ const SingleGame = (props) => {
 }
 
 SingleGame.propTypes = {
-    
+    game: PropTypes.object.isRequired,
+    i: PropTypes.number.isRequired
 }
 
 export default SingleGame;
