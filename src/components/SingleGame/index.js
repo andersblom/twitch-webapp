@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SingleGame = (props) => {
+const SingleGame = props => {
     const game = props.game.game;
     const { channels, viewers } = props;
     console.log(props.game);

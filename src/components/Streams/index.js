@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import SingleStream from '../SingleStream';
 export default class Streams extends Component {
   componentWillMount() {
     axios.get(`https://api.twitch.tv/kraken/streams/?client_id=${process.env.REACT_APP_TWITCH_CLIENT_ID}`)
@@ -10,10 +11,15 @@ export default class Streams extends Component {
     })
     .catch(err => console.error(err));
   }
+
+  renderSingleGame(stream, i) {
+    return <SingleStream stream={stream} i={i} key={i} />
+  }
+
   render() {
     return (
       <div>
-        hi im streams
+        {this.props.streams.map(this.renderSingleGame)}
       </div>
     );
   }
