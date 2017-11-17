@@ -1,6 +1,6 @@
-exports.streams = (state = [], action) => {
+exports.games = (state = [], action) => {
     switch(action.type) {
-        case 'SET_STREAMS': 
+        case 'SET_GAMES': 
             return [
                 ...action.data
             ];
