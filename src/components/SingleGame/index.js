@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const SingleGame = props => {
     const game = props.game.game;
     const { channels, viewers } = props;
 
     return(
-        <div>{game.name}</div>
+        <div><Link to={`/game/${game.name}`}>{game.name}</Link></div>
     );
 }
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const SingleStream = props => {
     const stream = props.stream;
     return(
-        <div>{stream.channel.name} playing {stream.channel.game}</div>
+        <div><Link to={`/watch/${stream.channel.display_name}`}>{stream.channel.name} playing {stream.channel.game}</Link></div>
     );
 }
 
