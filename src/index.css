@@ -3,3 +3,9 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+/* Variables */
+:root {
+  --white: #ffffff;
+  --twitch_purple: #4b367c;
+}

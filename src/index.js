@@ -8,11 +8,13 @@ import { Provider } from 'react-redux';
 
 import Routes from './Routes';
 
+import './index.css';
+
 require('dotenv').config();
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <Routes />
     </Provider>
 , document.getElementById('root'));
 registerServiceWorker();
