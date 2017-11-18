@@ -6,7 +6,7 @@ import StreamPlayer from '../components/StreamPlayer';
 
 const mapStateToProps = state => {
     return {
-        streamSelected: state.streamSelected,
+        selectedStream: state.selectedStream,
         isPlaying: state.isPlaying
     }
 }
