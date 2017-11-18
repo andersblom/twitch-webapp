@@ -6,7 +6,7 @@ import Footer from '../Footer';
 import Games from '../Games';
 import Streams from '../Streams';
 import ListStreamsByGame from '../ListStreamsByGame';
-import WatchStream from '../WatchStream';
+import WatchStream from '../../containers/WatchStream';
 
 export default class Main extends Component {
   render() {
@@ -22,9 +22,7 @@ export default class Main extends Component {
         <Route path="/game/:gameName" render={ props => 
           <ListStreamsByGame {...this.props} {...props} />
         } />
-        <Route path="/watch/:streamerName" render={ props => 
-          <WatchStream {...this.props} {...props} />
-        } />
+        <Route path="/watch/:streamerName" component={WatchStream} />
         <Footer />
       </div>
     );
