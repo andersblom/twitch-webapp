@@ -9,3 +9,22 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li:not(:last-child) {
+    margin-right: 1em;
+}
+
+.header__nav__link {
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font__stack--main);
+    padding: 5px;
+}
