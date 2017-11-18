@@ -5,7 +5,7 @@ import './header.css';
 
 const Header = () => (
     <header>
-        <div className="logo">Twitch</div>
+        <div className="logo"><Link to="/">Twitch</Link></div>
         <nav>
             <ul>
                 <li><Link to="/popular" className="header__nav__link">Popular</Link></li>
