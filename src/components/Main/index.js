@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
 import Games from '../Games';
-import Streams from '../Streams';
+import FeaturedStreams from '../FeaturedStreams';
 import ListStreamsByGame from '../ListStreamsByGame';
 import WatchStream from '../../containers/WatchStream';
 
@@ -14,7 +14,7 @@ export default class Main extends Component {
       <div>
         <Header />
         <Route exact path="/" render={ props => 
-          <Streams {...this.props} />
+          <FeaturedStreams {...this.props} />
         } />
         <Route path="/games" render={ props => 
           <Games {...this.props} />

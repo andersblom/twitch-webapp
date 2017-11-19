@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import SingleStream from '../SingleStream';
-export default class Streams extends Component {
+export default class FeaturedStreams extends Component {
   componentWillMount() {
     axios.get(`https://api.twitch.tv/kraken/streams/?client_id=${process.env.REACT_APP_TWITCH_CLIENT_ID}`)
     .then(res => {
