@@ -13,7 +13,7 @@ export default class Main extends Component {
     return (
       <div>
         <Header />
-        <Route path="/popular" render={ props => 
+        <Route exact path="/" render={ props => 
           <Streams {...this.props} />
         } />
         <Route path="/games" render={ props => 
