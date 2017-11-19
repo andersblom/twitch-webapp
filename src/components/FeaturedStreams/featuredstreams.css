@@ -1,0 +1,7 @@
+.featuredStreams__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(300px, auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}

@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const SingleStream = props => {
-    const stream = props.stream;
+import './singlestream.css';
+
+const SingleStream = ({ stream }) => {
     return(
-        <div><Link to={`/watch/${stream.channel.name}`}>{stream.channel.name} playing {stream.channel.game}</Link></div>
+        <div className="singleStream__container">
+            <div className="singlestream__backgroundImage" style={{ backgroundImage: `url(${stream.preview.large})` }}></div>
+            <Link to={`/watch/${stream.channel.name}`}>{stream.channel.name} playing {stream.channel.game}</Link>
+        </div>
     );
 }
 

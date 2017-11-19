@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import SingleStream from '../SingleStream';
+
+import './featuredstreams.css';
+
 export default class FeaturedStreams extends Component {
   componentWillMount() {
     axios.get(`https://api.twitch.tv/kraken/streams/?client_id=${process.env.REACT_APP_TWITCH_CLIENT_ID}`)
@@ -18,8 +21,9 @@ export default class FeaturedStreams extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.streams.map(this.renderSingleGame)}
+      <div className="featuredStreams__container">
+        <h1 className="pageTitle">Featured Streams</h1>
+        <div className="featuredStreams__grid">{this.props.streams.map(this.renderSingleGame)}</div>
       </div>
     );
   }
