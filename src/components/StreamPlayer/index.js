@@ -11,13 +11,17 @@ export default class StreamPlayer extends Component {
         .catch(err => console.error(err));
     }
     render() {
-        if (this.props.selectedStream.channel.display_name) {
+        const { channel } = this.props.selectedStream
+        if (channel) {
+            console.log(channel);
             return (
                 <div>
-                    <div>I'll play you a stream: {this.props.selectedStream.channel.display_name}</div>
+                    <div>Viewing stream: {channel.display_name}</div>
                     <button onClick={() => this.props.togglePlayingStatus()}>{this.props.isPlaying ? "pause" : "play" }</button>
                 </div>
             );
+        } else {
+            return <div>loading..</div>
         }
     }
 }
