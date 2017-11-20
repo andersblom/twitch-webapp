@@ -32,7 +32,9 @@ export default class SingleStream extends Component {
                 <div className="singleStream__container__hovertext">
                     Live for {this.getLiveTime(stream.created_at)}
                 </div>
-                <div className="singleStream__backgroundImage" style={{ backgroundImage: `url(${stream.preview.large})` }}></div>
+                <div className="singleStream__backgroundImage__container">
+                    <div className="singleStream__backgroundImage" style={{ backgroundImage: `url(${stream.preview.large})` }}></div>
+                </div>
                 <div className="singleStream__info">
                     <div className="singleStream__info__name">{stream.channel.name}</div>
                     <div className="singleStream__info__game">playing {stream.channel.game}</div>

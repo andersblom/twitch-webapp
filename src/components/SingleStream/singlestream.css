@@ -1,7 +1,7 @@
 .singleStream__container {
     position: relative;
     z-index: 0;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.19);
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.19);
     overflow-y: hidden;
     transition: 
         150ms box-shadow ease-in-out,
@@ -9,7 +9,7 @@
     ;
 }
 .singleStream__container--hover {
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.17);
+    box-shadow: 0px 5px 25px rgba(0,0,0,0.17);
     transform: translateY(-5px);
 }
 
@@ -19,13 +19,17 @@
     top: 0;
     left: 0;
     color: white;
-    height: 100%;
+    height: 70%;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-15px);
     transition: 
-        150ms opacity ease-in-out,
-        150ms transform ease-in-out
+        150ms opacity ease-in-out 150ms,
+        150ms transform ease-in-out 150ms
     ;
 }
 .singleStream__container--hover .singleStream__container__hovertext {
@@ -33,15 +37,33 @@
     transform: translateY(0px);
 }
 
-.singleStream__backgroundImage {
+.singleStream__backgroundImage__container {
     position: absolute;
     z-index: 0;
     top: 0;
     left: 0;
     height: 70%; 
     width: 100%;
+    overflow-y: hidden;
+}
+
+.singleStream__container--hover .singleStream__backgroundImage__container {
+    background-color: var(--twitch_purple);
+}
+
+.singleStream__backgroundImage {
     background-size: cover;
     background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+.singleStream__container--hover .singleStream__backgroundImage {
+    height: 120%;
+    width: 120%;
+    margin: -5% 0 0 -10%;
+    filter: blur(5px);
+    opacity: 0.80;
 }
 
 .singleStream__info {
