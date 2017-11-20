@@ -34,3 +34,7 @@ export default class SingleGame extends Component {
         );
     }
 }
+
+SingleGame.propTypes = {
+    game: PropTypes.object.isRequired,
+}

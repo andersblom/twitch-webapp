@@ -11,9 +11,29 @@
         var(--timing) transform ease-in-out
     ;
 }
+
 .singleStream__container--hover {
     box-shadow: 0px 5px 25px rgba(0,0,0,0.17);
     transform: translateY(-5px);
+}
+
+/* Some Icon-adjusting thats not individual */
+/* For individual settings (positions) */
+/* - see specific parent */
+
+.singleStream__container i {
+    font-size: 12px;
+    display: inline-block;
+    color: var(--twitch_purple);
+    margin-right: 16px;
+}
+
+.singleStream__info > div {
+    position: relative;
+}
+
+.singleStream__container i:before {
+    position: absolute;
 }
 
 .singleStream__container__hovertext {
@@ -109,22 +129,19 @@
     margin: 0 0 .4em 0;
 }
 
-.singleStream__info__viewers {
-    position: relative;
-    text-align: right;
+/* Fix for moving up the icon */
+.singleStream__info__game i:before {
+    top: 2px;
 }
 
-.singleStream__info__viewers i {
-    font-size: 11px;
-    display: inline-block;
-    margin-right: 16px;
-    color: var(--twitch_purple);
+
+.singleStream__info__viewers {
+    text-align: right;
 }
 
 /* Fix for moving up the icon */
 .singleStream__info__viewers i:before {
-    position: absolute;
-    top: 4px;
+    top: 3px;
 }
 
 .singleStream__info__viewers .text {

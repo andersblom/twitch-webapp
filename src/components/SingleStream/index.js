@@ -37,7 +37,7 @@ export default class SingleStream extends Component {
                 </div>
                 <div className="singleStream__info">
                     <div className="singleStream__info__name">{stream.channel.name}</div>
-                    <div className="singleStream__info__game">playing {stream.channel.game}</div>
+                    <div className="singleStream__info__game"><i className="fa fa-gamepad" aria-hidden="true"></i> {stream.channel.game}</div>
                     <div className="singleStream__info__viewers">
                         <i className="fa fa-users" aria-hidden="true"></i>
                         <div className="text">{stream.viewers.toLocaleString()}</div>
@@ -46,4 +46,8 @@ export default class SingleStream extends Component {
             </Link>
         );
     }
+}
+
+SingleStream.propTypes = {
+    stream: PropTypes.object.isRequired,
 }
