@@ -12,6 +12,7 @@ body {
   --twitch_purple: #4b367c;
   --black: #000000;
   --text_gray: #c4c4c4;
-
+  --bg_white: #f0f0f0;
+  
   --font__stack--main: "Open Sans", Helvetica, sans-serif
 }

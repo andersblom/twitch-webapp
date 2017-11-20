@@ -1,5 +1,6 @@
 .mainWrapper {
     padding: 20px;
+    background-color: var(--bg_white);
 }
 
 .pageTitle {

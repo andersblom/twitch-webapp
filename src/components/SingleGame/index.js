@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const SingleGame = (props) => {
-    const game = props.game.game;
-    const { channels, viewers } = props.game;
-    return(
-        <Link to={`/game/${game.name}`}>
-            <div><img src={game.box.large} alt={game.name} /></div>
-            <div>{game.name}</div>
-            <div>{channels} channels streaming for {viewers} viewers</div>
-        </Link>
-    );
-}
+import './singlegame.css';
 
-SingleGame.propTypes = {
-    game: PropTypes.object.isRequired,
-    i: PropTypes.number.isRequired
-}
+export default class SingleGame extends Component {
+    constructor() {
+        super();
+        this.state = {
+            hover: false
+        }
+    }
 
-export default SingleGame;
+    toggleHover() {
+        this.setState({
+            hover: !this.state.hover,
+        })
+    }
+    
+    render() {
+        const game = this.props.game.game;
+        const { channels, viewers } = this.props.game;
+        
+        return(
+            <Link className={"games__grid__entry" + (this.state.hover ? " games__grid__entry--hover" : "")} to={`/game/${game.name}`} onMouseEnter={() => this.toggleHover()} onMouseLeave={() => this.toggleHover()}>
+                <div className="games__grid__background" style={{ backgroundImage: `url(${game.box.large})` }}></div>
+                <div className="games__grid__content">
+                    hey
+                </div>
+            </Link>
+        );
+    }
+}
