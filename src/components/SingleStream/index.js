@@ -16,7 +16,7 @@ export default class SingleStream extends Component {
         let now = new Date(Date.now());
         let startedAt = new Date(streamCreationDate);
         let calculatedLiveTime = Math.floor(((now - startedAt) / 1000) / 60 / 60);
-        return `${calculatedLiveTime} hours`;
+        return (calculatedLiveTime > 1) ? `${calculatedLiveTime} hours` : `${calculatedLiveTime} hour`; 
     }
 
     toggleHover() {

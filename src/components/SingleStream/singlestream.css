@@ -25,11 +25,16 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+
     opacity: 0;
     transform: translateY(-15px);
     transition: 
-        150ms opacity ease-in-out 150ms,
-        150ms transform ease-in-out 150ms
+        150ms opacity ease-in-out 200ms,
+        150ms transform ease-in-out 200ms
     ;
 }
 .singleStream__container--hover .singleStream__container__hovertext {
@@ -45,6 +50,9 @@
     height: 70%; 
     width: 100%;
     overflow-y: hidden;
+    transition: 
+        150ms background-color ease-in-out
+    ;
 }
 
 .singleStream__container--hover .singleStream__backgroundImage__container {
@@ -52,10 +60,18 @@
 }
 
 .singleStream__backgroundImage {
+    --timing: 150ms;
     background-size: cover;
     background-position: center center;
     height: 100%;
     width: 100%;
+    transition: 
+        var(--timing) height ease-in-out,
+        var(--timing) width ease-in-out,
+        var(--timing) margin ease-in-out,
+        var(--timing) filter ease-in-out,
+        var(--timing) opacity ease-in-out
+    ;
 }
 
 .singleStream__container--hover .singleStream__backgroundImage {
