@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import SectionHeader from '../SectionHeader';
 import SingleStream from '../SingleStream';
 
 import './featuredstreams.css';
@@ -26,7 +27,7 @@ export default class FeaturedStreams extends Component {
   render() {
     return (
       <div className="featuredStreams__container">
-        <h1 className="pageTitle">Featured Streams</h1>
+      <SectionHeader title={`Featured Streams`} />
         <div className="featuredStreams__grid">{this.props.streams.map(this.renderSingleGame)}</div>
       </div>
     );

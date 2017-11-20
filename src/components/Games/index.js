@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import SectionHeader from '../SectionHeader';
 import SingleGame from '../SingleGame';
 
 import './games.css';
@@ -21,7 +22,7 @@ export default class Games extends Component {
   render() {
     return (
       <div className="games__container">
-        <h1 className="pageTitle">Browse games</h1>
+      <SectionHeader title={`Browse games`} />
         <div className="games__grid">
           {this.props.games.map(this.renderSingleGame)}
         </div>

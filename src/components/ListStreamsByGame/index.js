@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import SectionHeader from '../SectionHeader';
 import SingleStream from '../SingleStream';
 
+import './liststreamsbygame.css';
 export default class ListStreamsByGame extends Component {
     componentWillMount() {
         const gameName = this.props.match.params.gameName;
@@ -19,9 +21,9 @@ export default class ListStreamsByGame extends Component {
     
     render() {
         return (
-          <div>
-            <h1>Streamers playing {this.props.match.params.gameName}</h1>
-            {this.props.streams.map(this.renderSingleGame)}
+          <div className="streamsByGame__container">
+            <SectionHeader title={`Streamers playing ${this.props.match.params.gameName}`} />
+            <div className="streamsByGame__grid">{this.props.streams.map(this.renderSingleGame)}</div>
           </div>
         );
     }

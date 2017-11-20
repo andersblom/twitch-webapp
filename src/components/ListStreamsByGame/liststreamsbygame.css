@@ -1,0 +1,7 @@
+.streamsByGame__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(300px, auto);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
