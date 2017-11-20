@@ -8,12 +8,12 @@
         150ms transform ease-in-out
     ;
 }
-.singleStream__container:hover {
+.singleStream__container--hover {
     box-shadow: 0px 5px 15px rgba(0,0,0,0.17);
     transform: translateY(-5px);
 }
 
-.singleStream__container--hover {
+.singleStream__container__hovertext {
     position: absolute;
     z-index: 2;
     top: 0;
@@ -28,7 +28,7 @@
         150ms transform ease-in-out
     ;
 }
-.singleStream__container--hover:hover {
+.singleStream__container--hover .singleStream__container__hovertext {
     opacity: 1;
     transform: translateY(0px);
 }
