@@ -52,13 +52,42 @@
     height: 30%;
     width: 100%;
     color: black;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
-.singleStream__channel__link {
+.singleStream__info__name {
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.1px;
+    text-transform: uppercase;
+    margin: 0 0 .2em 0;
+}
+
+.singleStream__info__game {
+    margin: 0 0 .4em 0;
+}
+
+.singleStream__info__viewers {
+    position: relative;
+    text-align: right;
+}
+
+.singleStream__info__viewers i {
+    font-size: 11px;
+    display: inline-block;
+    margin-right: 16px;
+    color: var(--twitch_purple);
+}
+
+/* Fix for moving up the icon */
+.singleStream__info__viewers i:before {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
+    top: 4px;
+}
+
+.singleStream__info__viewers .text {
+    color: var(--black);
+    display: inline-block;
+    font-size: 13px;
 }

@@ -7,7 +7,11 @@ import './featuredstreams.css';
 
 export default class FeaturedStreams extends Component {
   componentWillMount() {
-    axios.get(`https://api.twitch.tv/kraken/streams/?client_id=${process.env.REACT_APP_TWITCH_CLIENT_ID}`)
+    axios.get(`https://api.twitch.tv/kraken/streams/?client_id=${process.env.REACT_APP_TWITCH_CLIENT_ID}`, {
+      headers: {
+        
+      }
+    })
     .then(res => {
       const { streams } = res.data;
       this.props.setStreams(streams)
