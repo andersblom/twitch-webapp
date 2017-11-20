@@ -21,6 +21,7 @@ export default class Games extends Component {
   render() {
     return (
       <div className="games__container">
+        <h1 className="pageTitle">Browse games</h1>
         <div className="games__grid">
           {this.props.games.map(this.renderSingleGame)}
         </div>
