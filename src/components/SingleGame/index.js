@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const SingleGame = props => {
+const SingleGame = (props) => {
     const game = props.game.game;
-    const { channels, viewers } = props;
-
+    const { channels, viewers } = props.game;
     return(
-        <div><Link to={`/game/${game.name}`}>{game.name}</Link></div>
+        <Link to={`/game/${game.name}`}>
+            <div><img src={game.box.large} alt={game.name} /></div>
+            <div>{game.name}</div>
+            <div>{channels} channels streaming for {viewers} viewers</div>
+        </Link>
     );
 }
 

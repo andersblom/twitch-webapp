@@ -1,0 +1,7 @@
+.games__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(auto, auto);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}

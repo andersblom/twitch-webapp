@@ -1,11 +1,14 @@
 .singleStream__container {
+    --timing: 150ms;
+    --timing_slow: 200ms;
+
     position: relative;
     z-index: 0;
     box-shadow: 0px 0px 25px rgba(0,0,0,0.19);
     overflow-y: hidden;
     transition: 
-        150ms box-shadow ease-in-out,
-        150ms transform ease-in-out
+        var(--timing) box-shadow ease-in-out,
+        var(--timing) transform ease-in-out
     ;
 }
 .singleStream__container--hover {
@@ -33,8 +36,8 @@
     opacity: 0;
     transform: translateY(-15px);
     transition: 
-        150ms opacity ease-in-out 200ms,
-        150ms transform ease-in-out 200ms
+        var(--timing) opacity ease-in-out 200ms,
+        var(--timing) transform ease-in-out 200ms
     ;
 }
 .singleStream__container--hover .singleStream__container__hovertext {
@@ -66,9 +69,9 @@
     height: 100%;
     width: 100%;
     transition: 
-        var(--timing) height ease-in-out,
-        var(--timing) width ease-in-out,
-        var(--timing) margin ease-in-out,
+        var(--timing_slow) height ease-in-out,
+        var(--timing_slow) width ease-in-out,
+        var(--timing_slow) margin ease-in-out,
         var(--timing) filter ease-in-out,
         var(--timing) opacity ease-in-out
     ;

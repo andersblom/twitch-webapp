@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import SingleGame from '../SingleGame';
 
+import './games.css';
+
 export default class Games extends Component {
   componentWillMount() {
     axios.get(`https://api.twitch.tv/kraken/games/top?client_id=${process.env.REACT_APP_TWITCH_CLIENT_ID}`)
@@ -18,8 +20,10 @@ export default class Games extends Component {
 
   render() {
     return (
-      <div style={{ backgroundColor: "#dedede" }}>
-        {this.props.games.map(this.renderSingleGame)}
+      <div className="games__container">
+        <div className="games__grid">
+          {this.props.games.map(this.renderSingleGame)}
+        </div>
       </div>
     );
   }
