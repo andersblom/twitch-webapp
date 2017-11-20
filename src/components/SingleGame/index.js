@@ -27,8 +27,8 @@ export default class SingleGame extends Component {
                 <div className="games__grid__background" style={{ backgroundImage: `url(${game.box.large})` }}></div>
                 <div className="games__grid__overlay"></div>
                 <div className="games__grid__content">
-                    <div className="games__grid__content__streamers"><i class="fa fa-video-camera" aria-hidden="true"></i>{channels.toLocaleString()}</div>
-                    <div className="games__grid__content__viewers">{viewers.toLocaleString()}<i class="fa fa-users" aria-hidden="true"></i></div>
+                    <div className="games__grid__content__streamers"><i className="fa fa-video-camera" aria-hidden="true"></i>{channels.toLocaleString()}</div>
+                    <div className="games__grid__content__viewers">{viewers.toLocaleString()}<i className="fa fa-users" aria-hidden="true"></i></div>
                 </div>
             </Link>
         );

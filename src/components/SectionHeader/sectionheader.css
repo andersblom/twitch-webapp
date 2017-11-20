@@ -1,3 +1,9 @@
+.sectionheader__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .pageTitle {
     margin: 20px 0 20px 0;
     font-weight: bold;

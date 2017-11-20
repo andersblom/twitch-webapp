@@ -22,7 +22,7 @@ export default class ListStreamsByGame extends Component {
     render() {
         return (
           <div className="streamsByGame__container">
-            <SectionHeader title={`Streamers playing ${this.props.match.params.gameName}`} />
+            <SectionHeader title={`Streamers playing ${this.props.match.params.gameName}`} gridControls={true} />
             <div className="streamsByGame__grid">{this.props.streams.map(this.renderSingleGame)}</div>
           </div>
         );
