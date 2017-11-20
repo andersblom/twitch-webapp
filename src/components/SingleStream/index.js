@@ -6,10 +6,16 @@ import './singlestream.css';
 
 const SingleStream = ({ stream }) => {
     return(
-        <div className="singleStream__container">
-            <div className="singlestream__backgroundImage" style={{ backgroundImage: `url(${stream.preview.large})` }}></div>
-            <Link to={`/watch/${stream.channel.name}`}>{stream.channel.name} playing {stream.channel.game}</Link>
-        </div>
+        <Link to={`/watch/${stream.channel.name}`} className="singleStream__container">
+            <div className="singleStream__container--hover">
+                hover action yay
+            </div>
+            <div className="singleStream__backgroundImage" style={{ backgroundImage: `url(${stream.preview.large})` }}></div>
+            <div className="singleStream__info">
+                <div className="singleStream__info__name">{stream.channel.name}</div>
+                <div className="singleStream__info__game">playing {stream.channel.game}</div>
+            </div>
+        </Link>
     );
 }
 

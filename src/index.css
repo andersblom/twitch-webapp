@@ -10,6 +10,7 @@ body {
 :root {
   --white: #ffffff;
   --twitch_purple: #4b367c;
+  --black: #000000;
 
   --font__stack--main: "Open Sans", Helvetica, sans-serif
 }

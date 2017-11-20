@@ -1,13 +1,64 @@
 .singleStream__container {
     position: relative;
+    z-index: 0;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.19);
+    overflow-y: hidden;
+    transition: 
+        150ms box-shadow ease-in-out,
+        150ms transform ease-in-out
+    ;
+}
+.singleStream__container:hover {
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.17);
+    transform: translateY(-5px);
 }
 
-.singlestream__backgroundImage {
+.singleStream__container--hover {
     position: absolute;
+    z-index: 2;
     top: 0;
     left: 0;
-    height: 100%; 
+    color: white;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 
+        150ms opacity ease-in-out,
+        150ms transform ease-in-out
+    ;
+}
+.singleStream__container--hover:hover {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.singleStream__backgroundImage {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    height: 70%; 
     width: 100%;
     background-size: cover;
     background-position: center center;
+}
+
+.singleStream__info {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    height: 30%;
+    width: 100%;
+    color: black;
+}
+
+.singleStream__channel__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
 }
