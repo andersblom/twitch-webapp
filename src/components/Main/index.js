@@ -12,9 +12,9 @@ import './main.css';
 export default class Main extends Component {
   render() {
     return (
-      <div>
+      <div className="appWrapper">
         <Header />
-        <div className="mainWrapper">
+        <div className="contentWrapper">
           <Route exact path="/" render={ props => 
             <FeaturedStreams {...this.props} />
           } />
@@ -26,7 +26,6 @@ export default class Main extends Component {
           } />
           <Route path="/watch/:streamerName" component={WatchStream} />
         </div>
-        <Footer />
       </div>
     );
   }

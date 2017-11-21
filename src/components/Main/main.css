@@ -1,4 +1,13 @@
-.mainWrapper {
+.appWrapper {
+    display: grid;
+    grid-template-columns: 80px auto;
+    grid-column-gap: 0;
+}
+
+.contentWrapper {
     padding: 20px;
     background-color: var(--bg_white);
+    height: 100vh;
+    overflow-y: scroll;
+    box-sizing: border-box;
 }
