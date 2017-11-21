@@ -4,8 +4,8 @@ import { Route } from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
 import Games from '../Games';
-import FeaturedStreams from '../FeaturedStreams';
-import ListStreamsByGame from '../ListStreamsByGame';
+import FeaturedStreams from '../../containers/FeaturedStreams';
+import ListStreamsByGame from '../../containers/ListStreamsByGame';
 import WatchStream from '../../containers/WatchStream';
 
 import './main.css';
