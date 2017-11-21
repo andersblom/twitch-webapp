@@ -15,5 +15,7 @@ body {
   --text_gray--dark: #616161;
   --bg_white: #f0f0f0;
   
+  --gridSize: 260px;
+
   --font__stack--main: "Open Sans", Helvetica, sans-serif
 }

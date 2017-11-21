@@ -8,7 +8,7 @@ const SectionHeader = ({ title, gridControls = false, streamGrid, setStreamGridS
     <div className="sectionheader__container">
         <h1 className="pageTitle">{title}</h1>
         {gridControls ? 
-            <div className="xx"><input type="range" min="2" value={streamGrid} max="5" onChange={(e) => setStreamGridSize(e.target.value)} /></div>
+            <div className=""><input type="range" min="2" value={streamGrid} max="5" onChange={(e) => setStreamGridSize(e.target.value)} /></div>
         : 
          ""}
     </div>

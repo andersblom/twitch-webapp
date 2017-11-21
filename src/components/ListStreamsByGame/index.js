@@ -15,8 +15,29 @@ export default class ListStreamsByGame extends Component {
         })
         .catch(err => console.error(err));
     }
+
     renderSingleGame(stream, i) {
         return <SingleStream stream={stream} i={i} key={i} />
+    }
+
+    componentDidUpdate() {
+        const streamGridNum = parseInt(this.props.streamGrid);
+
+        if (streamGridNum === 2) {
+            document.documentElement.style.setProperty(`--gridSize`, '400px');
+        } 
+
+        if (streamGridNum === 3) {
+            document.documentElement.style.setProperty(`--gridSize`, '300px');
+        } 
+
+        if (streamGridNum === 4) {
+            document.documentElement.style.setProperty(`--gridSize`, '260px');
+        } 
+
+        if (streamGridNum === 5) {
+            document.documentElement.style.setProperty(`--gridSize`, '200px');
+        } 
     }
     
     render() {
