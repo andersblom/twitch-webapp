@@ -8,23 +8,27 @@ import './streamsgridwithcontrols.css';
 
 export default class StreamsGridWithControls extends Component {
     componentDidUpdate() {
+        this.updateStreamGridView();
+    }
+
+    updateStreamGridView() {
         const streamGridNum = this.props.streamGrid;
-
-        if (streamGridNum === 2) {
-            document.documentElement.style.setProperty(`--gridSize`, '400px');
-        } 
-
-        if (streamGridNum === 3) {
-            document.documentElement.style.setProperty(`--gridSize`, '300px');
-        } 
-
-        if (streamGridNum === 4) {
-            document.documentElement.style.setProperty(`--gridSize`, '260px');
-        } 
-
-        if (streamGridNum === 5) {
-            document.documentElement.style.setProperty(`--gridSize`, '200px');
-        } 
+    
+            if (streamGridNum === 2) {
+                document.documentElement.style.setProperty(`--gridSize`, '400px');
+            } 
+    
+            if (streamGridNum === 3) {
+                document.documentElement.style.setProperty(`--gridSize`, '300px');
+            } 
+    
+            if (streamGridNum === 4) {
+                document.documentElement.style.setProperty(`--gridSize`, '260px');
+            } 
+    
+            if (streamGridNum === 5) {
+                document.documentElement.style.setProperty(`--gridSize`, '200px');
+            } 
     }
 
     renderSingleGame(stream, i) {
