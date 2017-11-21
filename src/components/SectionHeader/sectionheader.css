@@ -5,7 +5,7 @@
     align-items: center;
 }
 .pageTitle {
-    margin: 20px 0 20px 0;
+    margin: 10px 0 26px 0;
     font-weight: bold;
     color: var(--text_gray--dark);
     text-transform: uppercase;

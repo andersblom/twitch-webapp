@@ -5,7 +5,7 @@
 }
 
 .contentWrapper {
-    padding: 20px;
+    padding: 20px 30px 20px 30px;
     background-color: var(--bg_white);
     height: 100vh;
     overflow-y: scroll;
