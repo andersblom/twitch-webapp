@@ -17,6 +17,11 @@
     ;
 }
 
+.singleStream__entry--hover {
+    box-shadow: 0px 5px 25px rgba(0,0,0,0.19);
+    transform: translateY(-5px);
+}
+
 .singleStream__entry__background {
     position: absolute;
     z-index: 0;
@@ -38,7 +43,7 @@
     background: linear-gradient(to top, rgba(0,0,0,0.5),rgba(0,0,0,0.25),rgba(0,0,0,0));
 }
 
-.singleStream__entry__info__name {
+.singleStream__entry__info {
     position: absolute;
     z-index: 2;
     height: 100%;
@@ -47,4 +52,51 @@
     left: 0;
     padding: 20px;
     color: white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.singleStream__entry__info__name {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    transition: 
+        var(--timing) transform ease-in-out,
+        var(--timing) opacity ease-in-out
+    ;
+}
+
+.singleStream__entry--hover .singleStream__entry__info__name {
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.singleStream__entry__info__hoverInfo {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: flex-end;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 
+        var(--timing) transform ease-in-out,
+        var(--timing) opacity ease-in-out
+    ;
+}
+
+.singleStream__entry__info__viewers, .singleStream__entry__info__game {
+    display: flex;
+    
+}
+
+.singleStream__entry__info__hoverInfo i {
+    display: block;
+    margin-right: 6px;
+}
+
+.singleStream__entry--hover .singleStream__entry__info__hoverInfo {
+    transform: translateY(0px);
+    opacity: 1;
 }

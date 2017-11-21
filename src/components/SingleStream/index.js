@@ -19,20 +19,30 @@ export default class SingleStream extends Component {
         return (calculatedLiveTime > 1) ? `${calculatedLiveTime} hours` : `${calculatedLiveTime} hour`; 
     }
 
-    toggleHover() {
+    toggleHoverOut() {
         this.setState({
-            hover: !this.state.hover
+            hover: false
+        });
+    }
+
+    toggleHoverIn() {
+        this.setState({
+            hover: true
         });
     }
 
     render() {
         const { stream } = this.props;
         return(
-            <Link to={`/watch/${stream.channel.name}`} className={"singleStream__entry" + (this.state.hover ? " singleStream__container--hover" : "")} onMouseEnter={() => this.toggleHover()} onMouseLeave={() => this.toggleHover()}>
+            <Link to={`/watch/${stream.channel.name}`} className={"singleStream__entry" + (this.state.hover ? " singleStream__entry--hover" : "")} onMouseEnter={() => this.toggleHoverIn()} onMouseLeave={() => this.toggleHoverOut()}>
                 <div className="singleStream__entry__background" style={{ backgroundImage: `url(${stream.preview.large})`}}></div>
                 <div className="singleStream__entry__overlay"></div>
                 <div className="singleStream__entry__info">
                     <div className="singleStream__entry__info__name">{stream.channel.name}</div>
+                    <div className="singleStream__entry__info__hoverInfo">
+                        <div className="singleStream__entry__info__game"><i className="fa fa-gamepad" aria-hidden="true"></i>{stream.channel.game}</div>
+                        <div className="singleStream__entry__info__viewers"><i className="fa fa-television" aria-hidden="true"></i>{stream.viewers.toLocaleString()}</div>
+                    </div>
                 </div>
             </Link>
         );
