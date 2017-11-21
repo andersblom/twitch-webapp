@@ -30,6 +30,10 @@ export default class SingleStream extends Component {
         return(
             <Link to={`/watch/${stream.channel.name}`} className={"singleStream__entry" + (this.state.hover ? " singleStream__container--hover" : "")} onMouseEnter={() => this.toggleHover()} onMouseLeave={() => this.toggleHover()}>
                 <div className="singleStream__entry__background" style={{ backgroundImage: `url(${stream.preview.large})`}}></div>
+                <div className="singleStream__entry__overlay"></div>
+                <div className="singleStream__entry__info">
+                    <div className="singleStream__entry__info__name">{stream.channel.name}</div>
+                </div>
             </Link>
         );
     }
