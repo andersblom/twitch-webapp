@@ -7,7 +7,8 @@ import Main from '../components/Main';
 const mapStateToProps = state => {
     return {
         streams: state.streams,
-        games: state.games
+        games: state.games,
+        streamGrid: state.streamGrid
     }
 }
 

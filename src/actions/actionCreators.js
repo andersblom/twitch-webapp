@@ -17,3 +17,8 @@ exports.togglePlayingStatus = () => ({
     type: 'TOGGLE_PLAYING_STATUS'
 });
 
+exports.setStreamGridSize = (size) => ({
+    type: 'SET_STREAMGRID_SIZE',
+    size
+});
+

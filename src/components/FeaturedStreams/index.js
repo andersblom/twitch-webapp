@@ -27,7 +27,7 @@ export default class FeaturedStreams extends Component {
   render() {
     return (
       <div className="featuredStreams__container">
-      <SectionHeader title={`Featured Streams`} gridControls={true} />
+      <SectionHeader title={`Featured Streams`} gridControls={true} {...this.props} />
         <div className="featuredStreams__grid">{this.props.streams.map(this.renderSingleGame)}</div>
       </div>
     );
