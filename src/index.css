@@ -16,6 +16,7 @@ body {
   --bg_white: #f0f0f0;
   
   --gridSize: 260px;
+  --gridItemHeight: 200px;
 
   --font__stack--main: "Open Sans", Helvetica, sans-serif
 }
