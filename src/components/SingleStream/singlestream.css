@@ -6,6 +6,9 @@
     z-index: 0;
     box-shadow: 0px 0px 25px rgba(0,0,0,0.19);
     overflow-y: hidden;
+    
+    border-radius: 4px;
+
     transition: 
         var(--timing) box-shadow ease-in-out,
         var(--timing) transform ease-in-out
