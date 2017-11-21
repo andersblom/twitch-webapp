@@ -4,10 +4,19 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .pageTitle {
     margin: 2px 0 26px 0;
     font-weight: bold;
     color: var(--text_gray--dark);
     font-size: 30px;
     letter-spacing: .02em;
+}
+
+.gridSizeIndicator {
+    color: var(--text_gray);
+}
+
+.gridSizeIndicator input {
+    margin: 0 15px;
 }
