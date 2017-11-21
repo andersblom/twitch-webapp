@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import axios from 'axios';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -10,6 +11,14 @@ import WatchStream from '../../containers/WatchStream';
 
 import './main.css';
 export default class Main extends Component {
+  componentWillMount() {
+    axios.get(`https://api.twitch.tv/kraken/games/top?limit=100&client_id=${process.env.REACT_APP_TWITCH_CLIENT_ID}`)
+    .then(res => {
+      this.props.setGames(res.data.top)
+    })
+    .catch(err => console.error(err));
+  }
+  
   render() {
     return (
       <div className="appWrapper">
