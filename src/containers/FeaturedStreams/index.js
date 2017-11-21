@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import StreamsGridWithControls from '../../components/StreamsGridWithControls';
+import Loading from '../../components/Loading';
 
 export default class FeaturedStreams extends Component {
   componentWillMount() {
@@ -15,7 +16,10 @@ export default class FeaturedStreams extends Component {
 
   render() {
     return (
-      <StreamsGridWithControls title={`Featured Streams`} {...this.props} />
+      this.props.streams.length == 0 ? 
+        <Loading /> 
+        : 
+        <StreamsGridWithControls title={`Featured Streams`} {...this.props} />
     );
   }
 }
