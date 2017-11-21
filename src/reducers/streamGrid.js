@@ -1,4 +1,4 @@
-exports.streamGrid = (state = 4, action) => {
+exports.streamGrid = (state = 3, action) => {
     switch (action.type) {
         case 'SET_STREAMGRID_SIZE':
             return action.size;

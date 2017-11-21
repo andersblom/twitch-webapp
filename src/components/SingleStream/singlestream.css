@@ -1,4 +1,4 @@
-.singleStream__container {
+.singleStream__entry {
     --timing: 150ms;
     --timing_slow: 200ms;
 
@@ -15,4 +15,15 @@
         var(--timing) box-shadow ease-in-out,
         var(--timing) transform ease-in-out
     ;
+}
+
+.singleStream__entry__background {
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
 }

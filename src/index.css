@@ -15,8 +15,8 @@ body {
   --text_gray--dark: #4b4b4b;
   --bg_white: #f0f0f0;
   
-  --gridSize: 260px;
-  --gridItemHeight: 200px;
+  --gridSize: 360px;
+  --gridItemHeight: 203px;
 
   --font__stack--main: "Open Sans", Helvetica, sans-serif
 }
