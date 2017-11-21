@@ -39,6 +39,7 @@ nav {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .header__nav__link {
@@ -59,3 +60,16 @@ nav {
 .header__nav__link:hover {
     background-color: var(--bg_white);
 }
+
+.header__nav__link--user {
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+.header__nav__link--user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+}
+
+
