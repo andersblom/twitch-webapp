@@ -2,7 +2,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setSelectedStream, togglePlayingStatus } from '../actions/actionCreators';
 
-import StreamPlayer from '../components/StreamPlayer';
+import ChannelViewer from '../containers/ChannelViewer';
 
 const mapStateToProps = state => {
     return {
@@ -15,6 +15,6 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators({setSelectedStream, togglePlayingStatus}, dispatch);
 }
 
-const WatchStream = connect(mapStateToProps, mapDispatchToProps)(StreamPlayer);
+const WatchStream = connect(mapStateToProps, mapDispatchToProps)(ChannelViewer);
 
 export default WatchStream;
