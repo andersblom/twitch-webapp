@@ -8,6 +8,7 @@ body {
 
 /* Variables */
 :root {
+  /* colors */
   --white: #ffffff;
   --twitch_purple: #4b367c;
   --black: #000000;
@@ -15,8 +16,15 @@ body {
   --text_gray--dark: #4b4b4b;
   --bg_white: #f0f0f0;
   
+  /* css grid (set to 4 as standard) */
   --gridSize: 360px;
   --gridItemHeight: 203px;
+
+  /* Animations */
+  --timing: 150ms;
+  --timing_slow: 230ms;
+  --timing_delayed: 150ms;
+  --timing_delayed_slow: 250ms;
 
   --font__stack--main: "Open Sans", Helvetica, sans-serif
 }

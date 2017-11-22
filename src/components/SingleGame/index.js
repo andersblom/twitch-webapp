@@ -26,9 +26,10 @@ export default class SingleGame extends Component {
             <Link className={"games__grid__entry" + (this.state.hover ? " games__grid__entry--hover" : "")} to={`/game/${game.name}`} onMouseEnter={() => this.toggleHover()} onMouseLeave={() => this.toggleHover()}>
                 <div className="games__grid__background" style={{ backgroundImage: `url(${game.box.large})` }}></div>
                 <div className="games__grid__overlay"></div>
-                <div className="games__grid__content">
+                <div className="games__grid__content__name">{game.name}</div>
+                <div className="games__grid__content__hover">
                     <div className="games__grid__content__streamers"><i className="fa fa-video-camera" aria-hidden="true"></i>{channels.toLocaleString()}</div>
-                    <div className="games__grid__content__viewers">{viewers.toLocaleString()}<i className="fa fa-users" aria-hidden="true"></i></div>
+                    <div className="games__grid__content__viewers"><i className="fa fa-users" aria-hidden="true"></i>{viewers.toLocaleString()}</div>
                 </div>
             </Link>
         );
