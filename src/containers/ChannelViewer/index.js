@@ -9,7 +9,8 @@ export default class ChannelViewer extends Component {
         this.getStreamByChannelName(channel);
     }
     
-    // Gets initiated first. If channel is offline: runs getOfflineStreamByChannelName()
+    // Gets initiated on componentMount. 
+    // If channel is offline: runs getOfflineStreamByChannelName()
     getStreamByChannelName(channel) {
         axios.get(`https://api.twitch.tv/kraken/streams/${channel}/?client_id=${process.env.REACT_APP_TWITCH_CLIENT_ID}`)
         .then(res => {
@@ -54,6 +55,10 @@ export default class ChannelViewer extends Component {
     }
 
     render() {
+        const { stream, channel } = this.props.selectedStream;
+        stream !== null 
+        ? "" // Render online component
+        : "" // Render offline component
         return (<div>hi</div>)
     }
 }
