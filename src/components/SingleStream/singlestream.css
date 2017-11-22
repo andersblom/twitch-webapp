@@ -17,6 +17,10 @@
     ;
 }
 
+.singleStream__entry:active {
+    transform: scale(0.97);
+}
+
 .singleStream__entry--hover {
     box-shadow: 0px 5px 15px rgba(0,0,0,0.23);
     transform: translateY(-5px);
