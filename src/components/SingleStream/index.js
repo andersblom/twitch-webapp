@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import RenderSvg from '../../globals/RenderSvg';
+
 import './singlestream.css';
 
 export default class SingleStream extends Component {
@@ -38,7 +40,7 @@ export default class SingleStream extends Component {
                 <div className="singleStream__entry__background" style={{ backgroundImage: `url(${stream.preview.large})`}}></div>
                 <div className="singleStream__entry__overlay"></div>
                 <div className="singleStream__entry__info">
-                    <div className="singleStream__entry__info__name">{stream.channel.name}</div>
+                    <div className="singleStream__entry__info__name"><RenderSvg iconName="airplay" height={40} width={40} />{stream.channel.name}</div>
                     <div className="singleStream__entry__info__hoverInfo">
                         <div className="singleStream__entry__info__game"><i className="fa fa-gamepad" aria-hidden="true"></i>{stream.channel.game}</div>
                         <div className="singleStream__entry__info__viewers"><i className="fa fa-television" aria-hidden="true"></i>{stream.viewers.toLocaleString()}</div>
