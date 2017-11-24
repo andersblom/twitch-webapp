@@ -119,9 +119,10 @@
     transform: translateY(0);
 }
 
-.games__grid__content__hover i {
+.games__grid__content__hover svg {
     margin-bottom: var(--icon_distance);
-    font-size: 22px;
+    height: 30px;
+    width: 30px;
 }
 
 .games__grid__content__streamers, .games__grid__content__viewers {
