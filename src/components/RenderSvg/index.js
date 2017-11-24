@@ -7,7 +7,7 @@ import feather from 'feather-icons';
 const RenderSvg = (props) => {
     const icon = feather.icons[props.iconName];
     // Don't put this HTML into the dom.
-    const dirtyHtml = feather.toSvg(props.iconName);
+    const dirtyHtml = feather.icons[icon.name].toSvg();
     // Sanitizing the SVG before use.
     const cleanHtml = SanitizeHtml(dirtyHtml, {
         // Only allowing for SVG tags
@@ -32,6 +32,7 @@ const RenderSvg = (props) => {
 }
 
 RenderSvg.propTypes = {
+    iconName: PropTypes.string.isRequired,
     fill: PropTypes.string,
     height: PropTypes.number,
     width: PropTypes.number,
@@ -42,6 +43,7 @@ RenderSvg.propTypes = {
 }
 
 RenderSvg.defaultProps = {
+    iconName: "tv",
     fill: "none",
     height: 24,
     width: 24,

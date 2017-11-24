@@ -57,6 +57,11 @@ nav {
     border-bottom: 1px solid var(--bg_white);
 }
 
+.header__nav__link .svgIcon {
+    height: 30px;
+    width: 30px;
+}
+
 .header__nav__link:hover {
     background-color: var(--bg_white);
 }
