@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import RenderSvg from '../RenderSvg';
+
 import './singlegame.css';
 
 export default class SingleGame extends Component {
@@ -28,8 +30,8 @@ export default class SingleGame extends Component {
                 <div className="games__grid__overlay"></div>
                 <div className="games__grid__content__name">{game.name}</div>
                 <div className="games__grid__content__hover">
-                    <div className="games__grid__content__streamers"><i className="fa fa-video-camera" aria-hidden="true"></i>{channels.toLocaleString()}</div>
-                    <div className="games__grid__content__viewers"><i className="fa fa-users" aria-hidden="true"></i>{viewers.toLocaleString()}</div>
+                    <div className="games__grid__content__streamers"><RenderSvg iconName="video" />{channels.toLocaleString()}</div>
+                    <div className="games__grid__content__viewers"><RenderSvg iconName="tv" />{viewers.toLocaleString()}</div>
                 </div>
             </Link>
         );
