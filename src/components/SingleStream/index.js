@@ -42,7 +42,7 @@ export default class SingleStream extends Component {
                 <div className="singleStream__entry__info">
                     <div className="singleStream__entry__info__name">{stream.channel.name}</div>
                     <div className="singleStream__entry__info__hoverInfo">
-                        <div className="singleStream__entry__info__game"><i className="fa fa-gamepad" aria-hidden="true"></i>{stream.channel.game}</div>
+                        <div className="singleStream__entry__info__game"><RenderSvg iconName="video" />{stream.channel.game}</div>
                         <div className="singleStream__entry__info__viewers"><RenderSvg iconName="tv" />{stream.viewers.toLocaleString()}</div>
                     </div>
                 </div>

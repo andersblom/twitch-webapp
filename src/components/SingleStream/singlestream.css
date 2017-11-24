@@ -99,14 +99,31 @@
     ;
 }
 
+/*  Making sure that game+viewers icons are positioned 
+    somewhat aligned with the text */
 .singleStream__entry__info__viewers, .singleStream__entry__info__game {
     display: flex;
-    
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
 }
 
-.singleStream__entry__info__hoverInfo i {
-    display: block;
+/*  Rule that handles both game&viewers icon */
+.singleStream__entry__info__hoverInfo svg {
+    height: 20px;
+    width: 20px;
     margin-right: 6px;
+    display: block;
+}
+
+/*  Pixel pushing the game-name-icon */
+.singleStream__entry__info__game svg { 
+    margin-top: 1px;
+}
+/* Pixel pushing the viewer-icon */
+.singleStream__entry__info__viewers svg {
+    margin-top: -4px;
 }
 
 .singleStream__entry--hover .singleStream__entry__info__hoverInfo {
