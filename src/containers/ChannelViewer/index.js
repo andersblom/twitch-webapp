@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import Loading from '../../components/Loading';
 import SingleChannelHeader from '../../components/SingleChannel/_SingleChannelHeader';
 import SingleChannelFooter from '../../components/SingleChannel/_SingleChannelFooter';
 import ViewChannelStreamOnline from '../../components/SingleChannel/_ViewChannelStreamOnline';
@@ -62,14 +61,14 @@ export default class ChannelViewer extends Component {
         const { stream, channel } = this.props.selectedStream;
         return (
             <div>
-            <SingleChannelHeader />
+            <SingleChannelHeader channel={channel} />
             { 
                 // Checking for live or not, rendering appropriate component
                 stream !== null 
-                ? <ViewChannelStreamOnline />
-                : <ViewChannelStreamOffline />
+                ? <ViewChannelStreamOnline channel={channel} />
+                : <ViewChannelStreamOffline channel={channel} />
             }
-            <SingleChannelFooter />
+            <SingleChannelFooter channel={channel} />
             </div>
         )
     }

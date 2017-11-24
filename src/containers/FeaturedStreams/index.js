@@ -16,7 +16,7 @@ export default class FeaturedStreams extends Component {
 
   render() {
     return (
-      this.props.streams.length == 0 ? 
+      this.props.streams.length === 0 ? 
         <Loading /> 
         : 
         <StreamsGridWithControls title={`Featured Streams`} {...this.props} />

@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom';
 import axios from 'axios';
 
 import Header from '../Header';
-import Footer from '../Footer';
 import Games from '../Games';
 import FeaturedStreams from '../../containers/FeaturedStreams';
 import ListStreamsByGame from '../../containers/ListStreamsByGame';
