@@ -3,11 +3,11 @@ import SanitizeHtml from 'sanitize-html';
 import PropTypes from 'prop-types';
 import feather from 'feather-icons';
 
+
 const RenderSvg = (props) => {
     const icon = feather.icons[props.iconName];
-    console.log(icon);
     // Don't put this HTML into the dom.
-    const dirtyHtml = icon.contents;
+    const dirtyHtml = feather.toSvg(props.iconName);
     // Sanitizing the SVG before use.
     const cleanHtml = SanitizeHtml(dirtyHtml, {
         // Only allowing for SVG tags
@@ -20,13 +20,12 @@ const RenderSvg = (props) => {
         <svg 
         className={`svgIcon svgIcon__${icon.name}`}
         fill={props.fill}
-        height={props.height}
-        width={props.width}
         stroke={props.stroke}
         strokeLinecap={props.strokeLinecap}
         strokeLinejoin={props.strokeLinejoin}
         strokeWidth={props.strokeWidth}
-        viewBox={"0 0 "+ props.width + " " + props.height}
+        viewBox={"0 0 24 24"}
+        preserveAspectRatio="xMidYMid meet"
         xmlns="http://www.w3.org/2000/svg"
         dangerouslySetInnerHTML={{ __html: cleanHtml }}></svg>
     )
@@ -40,7 +39,6 @@ RenderSvg.propTypes = {
     strokeLinecap: PropTypes.string,
     strokeLinejoin: PropTypes.string,
     strokeWidth: PropTypes.number,
-    viewBox: PropTypes.string,
 }
 
 RenderSvg.defaultProps = {
