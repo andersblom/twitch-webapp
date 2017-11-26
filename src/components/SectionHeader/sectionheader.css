@@ -17,6 +17,11 @@
     color: var(--text_gray);
 }
 
+.gridSizeIndicator .svgIcon {
+    height: 20px;
+    width: 20px;
+}
+
 .gridSizeIndicator input {
     margin: 0 15px;
 }
