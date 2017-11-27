@@ -61,7 +61,7 @@ export default class ChannelViewer extends Component {
         return (
             <div>
             <SingleChannelHeader channel={channel} />
-            <ViewChannelStream channel={channel} stream={stream} />
+            <ViewChannelStream refreshStream={this.getStreamByChannelName.bind(this)} channel={channel} stream={stream} {...this.props} />
             <SingleChannelFooter channel={channel} />
             </div>
         )
