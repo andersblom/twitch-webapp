@@ -3,8 +3,9 @@ import axios from 'axios';
 
 import SingleChannelHeader from '../../components/SingleChannel/_SingleChannelHeader';
 import SingleChannelFooter from '../../components/SingleChannel/_SingleChannelFooter';
-import ViewChannelStreamOnline from '../../components/SingleChannel/_ViewChannelStreamOnline';
-import ViewChannelStreamOffline from '../../components/SingleChannel/_ViewChannelStreamOffline';
+import ViewChannelStream from '../../components/SingleChannel/_ViewChannelStream';
+
+import Loading from '../../components/Loading';
 
 export default class ChannelViewer extends Component {
     componentDidMount() {
@@ -58,18 +59,19 @@ export default class ChannelViewer extends Component {
     }
 
     render() {
-        const { stream, channel } = this.props.selectedStream;
-        return (
-            <div>
-            <SingleChannelHeader channel={channel} />
-            { 
-                // Checking for live or not, rendering appropriate component
-                stream !== null 
-                ? <ViewChannelStreamOnline channel={channel} />
-                : <ViewChannelStreamOffline channel={channel} />
-            }
-            <SingleChannelFooter channel={channel} />
-            </div>
-        )
+        const { stream, channel, showChat } = this.props.selectedStream;
+        if (channel) {
+            return (
+                <div>
+                    <SingleChannelHeader showChat={this.props.selectedStream.showChat} toggleChat={this.props.toggleChat} channel={channel} />
+                    <ViewChannelStream refreshStream={this.getStreamByChannelName.bind(this)} channel={channel} stream={stream} showChat={showChat} {...this.props} />
+                    <SingleChannelFooter channel={channel} />
+                </div>
+            )
+        } else {
+            return (
+                <Loading />
+            )
+        }
     }
 }

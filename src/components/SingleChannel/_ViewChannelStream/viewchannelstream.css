@@ -1,0 +1,43 @@
+.channelPlayer__container {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.channelPlayer__video, .channelPlayer__chat {
+    height: 100%;
+}
+
+.channelPlayer__video {
+    flex: 3;
+}
+
+.channelPlayer__offlineImg {
+    width: 100%;
+    height: auto;
+}
+
+.channelPlayer__offline__nobanner {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    background-color: var(--twitch_purple);
+    color: var(--white);
+}
+
+.channelPlayer__chat {
+    flex: 1;
+}
+
+.channelPlayer__chat--hidden {
+    display: none;
+}
