@@ -1,4 +1,4 @@
-exports.selectedStream = (state = { showChat: true, stream: null }, action) => {
+exports.selectedStream = (state = { showChat: true, stream: null, channel: {} }, action) => {
     switch(action.type) {
         case 'SET_SELECTED_STREAM': 
             return Object.assign({}, {
@@ -7,8 +7,9 @@ exports.selectedStream = (state = { showChat: true, stream: null }, action) => {
             });
         case 'CLEAR_SELECTED_STREAM':
             return Object.assign({}, {
-                ...state,
-                stream: null
+                ...state.showChat,
+                stream: null,
+                channel: {}
             });
         case 'TOGGLE_CHAT':
             return Object.assign({}, {
