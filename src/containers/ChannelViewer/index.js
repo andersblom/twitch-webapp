@@ -5,6 +5,8 @@ import SingleChannelHeader from '../../components/SingleChannel/_SingleChannelHe
 import SingleChannelFooter from '../../components/SingleChannel/_SingleChannelFooter';
 import ViewChannelStream from '../../components/SingleChannel/_ViewChannelStream';
 
+import Loading from '../../components/Loading';
+
 export default class ChannelViewer extends Component {
     componentDidMount() {
         const channel = this.props.match.params.streamerName;
@@ -57,13 +59,19 @@ export default class ChannelViewer extends Component {
     }
 
     render() {
-        const { stream, channel } = this.props.selectedStream;
-        return (
-            <div>
-            <SingleChannelHeader channel={channel} />
-            <ViewChannelStream refreshStream={this.getStreamByChannelName.bind(this)} channel={channel} stream={stream} {...this.props} />
-            <SingleChannelFooter channel={channel} />
-            </div>
-        )
+        const { stream, channel, showChat } = this.props.selectedStream;
+        if (channel) {
+            return (
+                <div>
+                    <SingleChannelHeader showChat={this.props.selectedStream.showChat} toggleChat={this.props.toggleChat} channel={channel} />
+                    <ViewChannelStream refreshStream={this.getStreamByChannelName.bind(this)} channel={channel} stream={stream} showChat={showChat} {...this.props} />
+                    <SingleChannelFooter channel={channel} />
+                </div>
+            )
+        } else {
+            return (
+                <Loading />
+            )
+        }
     }
 }

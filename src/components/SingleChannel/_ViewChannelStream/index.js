@@ -20,39 +20,33 @@ export default class _ViewChannelStream extends Component {
     }
     render() {
         // console.log(channel, stream); 
-        const { channel, stream } = this.props;
+        const { channel, stream, showChat } = this.props;
         
-        if (channel !== undefined) {
-            if (stream === null) {
-                return (
-                    <div>Channel offline</div>
-                )
-            } else {
-                return(
-                    <div className="channelPlayer__container">
-                        <div className="channelPlayer__video">
-                        <ReactPlayer 
-                            url={`https://www.twitch.tv/${channel.name}`}
-                            width="100%" 
-                            height="100%" 
-                            playing={false}
-                        />
-                        </div>
-                        <div className={"channelPlayer__chat"}>
-                            <iframe frameborder="0" 
-                                scrolling="no" 
-                                id="chat_embed" 
-                                src={`http://www.twitch.tv/${channel.name}/chat`}
-                                height="100%" 
-                                width="100%">
-                            </iframe>
-                        </div>
-                    </div>
-                )
-            }
-        } else {
+        if (stream === null) {
             return (
-                <Loading />
+                <div>Channel offline</div>
+            )
+        } else {
+            return(
+                <div className="channelPlayer__container">
+                    <div className="channelPlayer__video">
+                    <ReactPlayer 
+                        url={`https://www.twitch.tv/${channel.name}`}
+                        width="100%" 
+                        height="100%" 
+                        playing={false}
+                    />
+                    </div>
+                    <div className={"channelPlayer__chat" + (showChat ? "" : " channelPlayer__chat--hidden")}>
+                        <iframe frameborder="0" 
+                            scrolling="no" 
+                            id="chat_embed" 
+                            src={`http://www.twitch.tv/${channel.name}/chat`}
+                            height="100%" 
+                            width="100%">
+                        </iframe>
+                    </div>
+                </div>
             )
         }
     }

@@ -13,8 +13,8 @@ exports.setSelectedStream = (stream) => ({
     stream
 });
 
-exports.togglePlayingStatus = () => ({
-    type: 'TOGGLE_PLAYING_STATUS'
+exports.toggleChat = () => ({
+    type: 'TOGGLE_CHAT'
 });
 
 exports.setStreamGridSize = (size) => ({

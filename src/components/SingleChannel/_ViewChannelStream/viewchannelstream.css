@@ -18,3 +18,7 @@
 .channelPlayer__chat {
     flex: 1;
 }
+
+.channelPlayer__chat--hidden {
+    display: none;
+}
