@@ -24,7 +24,11 @@ export default class _ViewChannelStream extends Component {
         
         if (stream === null) {
             return (
-                <div>Channel offline</div>
+                <div className="channelPlayer__container">
+                    <div className="channelPlayer__video">
+                        <img className="channelPlayer__offlineImg" src={channel.video_banner} alt={`${channel.name} is offline`} />
+                    </div>
+                </div>
             )
         } else {
             return(

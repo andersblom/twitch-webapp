@@ -15,6 +15,11 @@
     flex: 3;
 }
 
+.channelPlayer__offlineImg {
+    width: 100%;
+    height: auto;
+}
+
 .channelPlayer__chat {
     flex: 1;
 }
