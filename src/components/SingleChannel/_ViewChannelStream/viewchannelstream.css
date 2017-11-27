@@ -1,0 +1,20 @@
+.channelPlayer__container {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.channelPlayer__video, .channelPlayer__chat {
+    height: 100%;
+}
+
+.channelPlayer__video {
+    flex: 3;
+}
+
+.channelPlayer__chat {
+    flex: 1;
+}

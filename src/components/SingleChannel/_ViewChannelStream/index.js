@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-
 import ReactPlayer from 'react-player'
 
 import Loading from '../../Loading';
+
+import './viewchannelstream.css';
 
 export default class _ViewChannelStream extends Component {
     componentDidMount() {
@@ -28,19 +29,24 @@ export default class _ViewChannelStream extends Component {
                 )
             } else {
                 return(
-                    <div>
+                    <div className="channelPlayer__container">
+                        <div className="channelPlayer__video">
                         <ReactPlayer 
                             url={`https://www.twitch.tv/${channel.name}`}
                             width="100%" 
-                            height="80vh" 
+                            height="100%" 
+                            playing={false}
                         />
-                        <iframe frameborder="0" 
-                            scrolling="no" 
-                            id="chat_embed" 
-                            src={`http://www.twitch.tv/${channel.name}/chat`}
-                            height="500" 
-                            width="350">
-                        </iframe>
+                        </div>
+                        <div className={"channelPlayer__chat"}>
+                            <iframe frameborder="0" 
+                                scrolling="no" 
+                                id="chat_embed" 
+                                src={`http://www.twitch.tv/${channel.name}/chat`}
+                                height="100%" 
+                                width="100%">
+                            </iframe>
+                        </div>
                     </div>
                 )
             }
