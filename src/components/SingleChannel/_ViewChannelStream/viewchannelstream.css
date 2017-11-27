@@ -20,6 +20,20 @@
     height: auto;
 }
 
+.channelPlayer__offline__nobanner {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    background-color: var(--twitch_purple);
+    color: var(--white);
+}
+
 .channelPlayer__chat {
     flex: 1;
 }

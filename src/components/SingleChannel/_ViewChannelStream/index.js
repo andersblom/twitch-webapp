@@ -26,7 +26,20 @@ export default class _ViewChannelStream extends Component {
             return (
                 <div className="channelPlayer__container">
                     <div className="channelPlayer__video">
-                        <img className="channelPlayer__offlineImg" src={channel.video_banner} alt={`${channel.name} is offline`} />
+                        {
+                            channel.video_banner 
+                            ? <img className="channelPlayer__offlineImg" src={channel.video_banner} alt={`${channel.name} is offline`} />
+                            : <div className="channelPlayer__offline__nobanner">{channel.name} is offline :(</div> 
+                        }
+                    </div>
+                    <div className={"channelPlayer__chat" + (showChat ? "" : " channelPlayer__chat--hidden")}>
+                        <iframe frameborder="0" 
+                            scrolling="no" 
+                            id="chat_embed" 
+                            src={`http://www.twitch.tv/${channel.name}/chat`}
+                            height="100%" 
+                            width="100%">
+                        </iframe>
                     </div>
                 </div>
             )
