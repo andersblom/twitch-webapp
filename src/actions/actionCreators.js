@@ -17,6 +17,10 @@ exports.toggleChat = () => ({
     type: 'TOGGLE_CHAT'
 });
 
+exports.clearSelectedStream = () => ({
+    type: 'CLEAR_SELECTED_STREAM'
+});
+
 exports.setStreamGridSize = (size) => ({
     type: 'SET_STREAMGRID_SIZE',
     size

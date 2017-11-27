@@ -58,6 +58,10 @@ export default class ChannelViewer extends Component {
         });
     }
 
+    componentWillUnmount() {
+        this.props.clearSelectedStream();
+    }
+
     render() {
         const { stream, channel, showChat } = this.props.selectedStream;
         if (channel) {

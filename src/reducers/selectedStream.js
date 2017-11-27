@@ -5,6 +5,11 @@ exports.selectedStream = (state = { showChat: true, stream: null }, action) => {
                 ...state,
                 ...action.stream
             });
+        case 'CLEAR_SELECTED_STREAM':
+            return Object.assign({}, {
+                ...state,
+                stream: null
+            });
         case 'TOGGLE_CHAT':
             return Object.assign({}, {
                 ...state,

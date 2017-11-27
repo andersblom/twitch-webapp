@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setSelectedStream, togglePlayingStatus, toggleChat } from '../actions/actionCreators';
+import { setSelectedStream, togglePlayingStatus, toggleChat, clearSelectedStream } from '../actions/actionCreators';
 
 import ChannelViewer from '../containers/ChannelViewer';
 
@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({setSelectedStream, togglePlayingStatus, toggleChat}, dispatch);
+    return bindActionCreators({setSelectedStream, togglePlayingStatus, toggleChat, clearSelectedStream}, dispatch);
 }
 
 const WatchStream = connect(mapStateToProps, mapDispatchToProps)(ChannelViewer);
