@@ -3,8 +3,7 @@ import axios from 'axios';
 
 import SingleChannelHeader from '../../components/SingleChannel/_SingleChannelHeader';
 import SingleChannelFooter from '../../components/SingleChannel/_SingleChannelFooter';
-import ViewChannelStreamOnline from '../../components/SingleChannel/_ViewChannelStreamOnline';
-import ViewChannelStreamOffline from '../../components/SingleChannel/_ViewChannelStreamOffline';
+import ViewChannelStream from '../../components/SingleChannel/_ViewChannelStream';
 
 export default class ChannelViewer extends Component {
     componentDidMount() {
@@ -62,12 +61,7 @@ export default class ChannelViewer extends Component {
         return (
             <div>
             <SingleChannelHeader channel={channel} />
-            { 
-                // Checking for live or not, rendering appropriate component
-                stream !== null 
-                ? <ViewChannelStreamOnline channel={channel} />
-                : <ViewChannelStreamOffline channel={channel} />
-            }
+            <ViewChannelStream channel={channel} stream={stream} />
             <SingleChannelFooter channel={channel} />
             </div>
         )
