@@ -7,32 +7,8 @@ import SingleStream from '../SingleStream';
 import './streamsgridwithcontrols.css';
 
 export default class StreamsGridWithControls extends Component {
-    componentDidUpdate() {
-        this.updateStreamGridView();
-    }
-
-    updateStreamGridView() {
-        const streamGridNum = this.props.streamGrid;
-    
-            if (streamGridNum === 2) {
-                document.documentElement.style.setProperty(`--gridSize`, '560px');
-                document.documentElement.style.setProperty(`--gridItemHeight`, '315px');
-            } 
-    
-            if (streamGridNum === 3) {
-                document.documentElement.style.setProperty(`--gridSize`, '360px');
-                document.documentElement.style.setProperty(`--gridItemHeight`, '203px');
-            } 
-    
-            if (streamGridNum === 4) {
-                document.documentElement.style.setProperty(`--gridSize`, '265px');
-                document.documentElement.style.setProperty(`--gridItemHeight`, '149px');
-            } 
-    
-            if (streamGridNum === 5) {
-                document.documentElement.style.setProperty(`--gridSize`, '206px');
-                document.documentElement.style.setProperty(`--gridItemHeight`, '155px');
-            } 
+    determineGridSize() {
+        return this.props.streamGrid;
     }
 
     renderSingleGame(stream, i) {
@@ -44,7 +20,7 @@ export default class StreamsGridWithControls extends Component {
         return(
             <div className="streamsByGame__container">
                 <SectionHeader title={props.title} gridControls={true} {...props} />
-                <div className="streamsByGame__grid">
+                <div className={`streamsByGame__grid grid-${this.determineGridSize()}`}>
                     {props.streams.map(this.renderSingleGame)}
                 </div>
             </div>
