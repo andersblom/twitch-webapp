@@ -25,12 +25,3 @@ exports.setStreamGridSize = (size) => ({
     type: 'SET_STREAMGRID_SIZE',
     size
 });
-
-exports.logIn = token => ({
-    type: 'LOG_IN',
-    token
-});
-
-exports.logOut = () => ({
-    type: 'LOG_OUT',
-});

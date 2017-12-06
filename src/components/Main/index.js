@@ -7,7 +7,7 @@ import Games from '../Games';
 import FeaturedStreams from '../../containers/FeaturedStreams';
 import ListStreamsByGame from '../../containers/ListStreamsByGame';
 import WatchStream from '../../containers/WatchStream';
-import UserArea from '../../components/UserArea';
+import Authentication from '../../containers/Authentication';
 
 import './main.css';
 export default class Main extends Component {
@@ -34,7 +34,7 @@ export default class Main extends Component {
               <ListStreamsByGame {...this.props} {...props} />
             } />
             <Route path="/watch/:streamerName" component={WatchStream} />
-            <Route path="/user" component={UserArea} />
+            <Route path="/user" component={Authentication} />
         </div>
       </div>
     );
