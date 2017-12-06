@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link, Redirect } from 'react-router-dom';
+
+import Login from './Login';
+import AuthWithTwitchApi from './AuthWithTwitchApi';
+import AuthWithTwitchApiWasSuccessful from './AuthWithTwitchApiWasSuccessful';
 
 export default class UserArea extends Component {
-    componentDidMount() {
-        const paramsObject = {};
-        let params = document.location.hash;
-        params = params.slice(1);
-        params = params.split("&");
-        
-        params.forEach(param => {
-            let splitParam = param.split("=");
-            paramsObject[splitParam[0]] = splitParam[1]
-        })
-        console.log(paramsObject);
-    }
     render () {
+        const props = this.props;
+        const currentUrl = props.match.url;
+
         return (
             <div>
                 <h1>User area</h1>
-                <Link to="/user/auth">Log in using Twitch</Link>
+                <Route exact path={`${currentUrl}/login`} component={Login} />
+                <Route exact path={`${currentUrl}/login/auth`} component={AuthWithTwitchApi}/>
+                <Route path={`${currentUrl}/login/auth/complete`} component={AuthWithTwitchApiWasSuccessful} />
+                <Route path={`${currentUrl}/dashboard`} render={() => <div>Dashboard</div>} />
+                <Route path={`${currentUrl}/logout`} render={() => <div>I'll log you out.</div>} />
             </div>
         )
     }

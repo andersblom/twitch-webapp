@@ -34,10 +34,7 @@ export default class Main extends Component {
               <ListStreamsByGame {...this.props} {...props} />
             } />
             <Route path="/watch/:streamerName" component={WatchStream} />
-            <Route path="/user/:tokenStuff?" component={UserArea} />
-            <Route path="/user/auth" render={
-              () => { window.location = `https://api.twitch.tv/kraken/oauth2/authorize?client_id=${process.env.REACT_APP_TWITCH_CLIENT_ID}&redirect_uri=http://localhost:3000/user/&response_type=token+id_token&scope=openid+user_read` }
-            } />
+            <Route path="/user" component={UserArea} />
         </div>
       </div>
     );
