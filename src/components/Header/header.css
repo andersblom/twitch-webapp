@@ -69,6 +69,7 @@ nav {
 .header__nav__link--user {
     margin-top: auto;
     margin-bottom: 15px;
+    border-bottom: 0px;
 }
 
 .header__nav__link--user img {

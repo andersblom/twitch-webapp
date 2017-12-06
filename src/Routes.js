@@ -7,7 +7,7 @@ export default class Routes extends Component {
     render() {
         return(
             <Router>
-                <Route to="/" component={App} />
+                <Route exact match="/" component={App} />
             </Router>
         );
     }
