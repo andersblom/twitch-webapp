@@ -8,7 +8,8 @@ const mapStateToProps = state => {
     return {
         streams: state.streams,
         games: state.games,
-        streamGrid: state.streamGrid
+        streamGrid: state.streamGrid,
+        user: state.user
     }
 }
 

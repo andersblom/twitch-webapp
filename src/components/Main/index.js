@@ -22,7 +22,7 @@ export default class Main extends Component {
   render() {
     return (
       <div className="appWrapper">
-        <Header />
+        <Header isLoggedIn={this.props.user.isLoggedIn} />
         <div className="contentWrapper">
             <Route exact path="/" render={ props => 
               <FeaturedStreams {...this.props} />
