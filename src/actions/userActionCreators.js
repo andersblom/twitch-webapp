@@ -1,6 +1,7 @@
-exports.logIn = token => ({
+exports.logIn = (token, user) => ({
     type: 'LOG_IN',
-    token
+    token,
+    user
 });
 
 exports.logOut = () => ({

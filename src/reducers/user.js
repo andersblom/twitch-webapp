@@ -1,6 +1,7 @@
 const initialState = {
     token: null,
-    isLoggedIn: false
+    isLoggedIn: false,
+    userData: {}
 }
 
 exports.user = (state = initialState, action) => {
@@ -9,13 +10,15 @@ exports.user = (state = initialState, action) => {
             return Object.assign({}, {
                 ...state,
                 isLoggedIn: true,
-                token: action.token
+                token: action.token,
+                userData: action.user
             });
         case 'LOG_OUT': 
             return Object.assign({}, {
                 ...state,
                 isLoggedIn: false,
-                token: null
+                token: null,
+                userData: {}
             });
         default: 
             return state;
