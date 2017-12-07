@@ -18,6 +18,25 @@ export default class Main extends Component {
       this.props.setGames(res.data.top)
     })
     .catch(err => console.error(err));
+
+    // Looking for localStoraged auth token
+    const storage = process.env.REACT_APP_LOCALSTORAGE_NAME;
+    const authTokenFromStorage = localStorage.getItem(storage);
+    
+    // If an authToken is in the localStorage, fetch this users information and run the login dispatch
+    if (authTokenFromStorage !== null) {
+      axios.get(`https://api.twitch.tv/kraken/user`, {
+        headers: {
+          'Accept': 'application/vnd.twitchtv.v5+json',
+          'Client-ID': process.env.REACT_APP_TWITCH_CLIENT_ID,
+          'Authorization': `OAuth ${authTokenFromStorage}`
+        }
+      })
+      .then(res => {
+        // Dispatch login with authtoken + data
+        this.props.logIn(authTokenFromStorage, res.data);
+      })
+    }
   }
   
   render() {
