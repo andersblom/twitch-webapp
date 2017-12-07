@@ -12,6 +12,7 @@ import Authentication from '../../containers/Authentication';
 import './main.css';
 export default class Main extends Component {
   componentWillMount() {
+    // Getting initial stream of games.
     axios.get(`https://api.twitch.tv/kraken/games/top?limit=100&client_id=${process.env.REACT_APP_TWITCH_CLIENT_ID}`)
     .then(res => {
       this.props.setGames(res.data.top)

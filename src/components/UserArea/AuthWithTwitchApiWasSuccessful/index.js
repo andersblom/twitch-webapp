@@ -54,6 +54,8 @@ export default class AuthWithTwitchApiWasSuccessful extends Component {
                 });
                 // Call LogIn reducer
                 this.props.logIn(this.accessToken, userObj);
+                // set the localStorage login
+                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_NAME, this.accessToken);
                 // Redirect user
                 this.props.redirect("/user/dashboard");
             })
