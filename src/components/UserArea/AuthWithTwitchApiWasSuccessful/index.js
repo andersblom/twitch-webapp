@@ -3,24 +3,30 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 export default class AuthWithTwitchApiWasSuccessful extends Component {
+    constructor() {
+        super();
+        this.state = {
+            error: false
+        }
+    }
     componentWillMount() {
-        const paramsObject = {};
+        this.stateFromParams = {};
         let params = document.location.hash;
         params = params.slice(1);
         params = params.split("&");
         
         params.forEach(param => {
             let splitParam = param.split("=");
-            paramsObject[splitParam[0]] = splitParam[1]
+            this.stateFromParams[splitParam[0]] = splitParam[1]
         })
 
-        this.accessToken = paramsObject.access_token;
-
+        this.accessToken = this.stateFromParams.access_token;
+        console.log(this.stateFromParams);
         this.handleRedirect()
     }
 
     handleRedirect() {
-        if (this.accessToken) {
+        if (!this.stateFromParams.error && this.accessToken) {
             axios.get(`https://api.twitch.tv/kraken/user`, {
                 headers: {
                     'Accept': 'application/vnd.twitchtv.v5+json',
@@ -32,8 +38,13 @@ export default class AuthWithTwitchApiWasSuccessful extends Component {
                 return res.data
             })
             .then(userObj => {
+                // Setting error-state to display a message until redirect kicks in.
+                this.setState({
+                    error: false
+                });
                 // Call LogIn reducer
                 this.props.logIn(this.accessToken, userObj);
+                // Redirect user
                 this.props.redirect("/user/dashboard");
             })
             .catch(err => {
@@ -41,13 +52,19 @@ export default class AuthWithTwitchApiWasSuccessful extends Component {
             });
         } else {
             console.error("Oh snap. There's some error going on. Try again!");
+            this.setState({
+                error: true
+            })
         }  
     }
 
     render() {
         return (
             <div>
-                Auth is done, i'll save the token stuff and redirect you..
+                { this.state.error 
+                    ? "Something went bad and we couldn't connect :( try again... pretty please?" 
+                    : "Great success. Let us just save your authorization, and we'll show you to your Dashboard!"
+                }
             </div>
         )
     }
