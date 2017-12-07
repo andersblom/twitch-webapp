@@ -10,8 +10,8 @@ export default class UserDashboard extends Component {
             "wwwwwwwwwwwwwwadwwwdsawwwwd can't move"
         ];
         let i = Math.random();
-        i = Math.floor(i * welcomeMessages.length + 1)
-        return welcomeMessages[i-1];
+        i = Math.floor(i * welcomeMessages.length)
+        return welcomeMessages[i];
     }
     render() {
         return (
