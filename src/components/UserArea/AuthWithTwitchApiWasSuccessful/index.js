@@ -10,22 +10,31 @@ export default class AuthWithTwitchApiWasSuccessful extends Component {
         }
     }
     componentWillMount() {
+        // Object that will be saved later when populated
         this.stateFromParams = {};
+        // Getting the token and other stuff from the url hash
         let params = document.location.hash;
+        // removing the hash
         params = params.slice(1);
+        // Splitting into array of own params key/values
         params = params.split("&");
         
+        // Pairing each param to eachother in the object from earlier
         params.forEach(param => {
             let splitParam = param.split("=");
             this.stateFromParams[splitParam[0]] = splitParam[1]
-        })
+        });
 
+        // Setting a component wide accesstoken property
         this.accessToken = this.stateFromParams.access_token;
         console.log(this.stateFromParams);
         this.handleRedirect()
     }
 
     handleRedirect() {
+        // If something goes bad or user declines Twitch OAuth, 
+        // An error key/val pair is generated in componentWillMount()
+        // If this key/val is not present, and there is an accessToken assume no error
         if (!this.stateFromParams.error && this.accessToken) {
             axios.get(`https://api.twitch.tv/kraken/user`, {
                 headers: {
@@ -35,6 +44,7 @@ export default class AuthWithTwitchApiWasSuccessful extends Component {
                 }
             })
             .then(res => {
+                // Sending this to the next .then()
                 return res.data
             })
             .then(userObj => {
@@ -50,6 +60,8 @@ export default class AuthWithTwitchApiWasSuccessful extends Component {
             .catch(err => {
                 console.error(err);
             });
+            // This else is in case there's no accessToken 
+            // Or the stateFromParams Object holds an error-key.
         } else {
             console.error("Oh snap. There's some error going on. Try again!");
             this.setState({
