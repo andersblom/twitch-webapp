@@ -36,6 +36,16 @@ export default class Main extends Component {
         // Dispatch login with authtoken + data
         this.props.logIn(authTokenFromStorage, res.data);
       })
+      .catch(err => {
+        if (err.response.data.status === 401 && err.response.data.error === "Unauthorized") {
+          // Authtoken no longer works. Log out and clear storage
+          localStorage.clear(storage);
+          this.props.logOut();
+        } else {
+          console.error("Something bad happened. Here's some details:");
+          console.dir(err);
+        }
+      });
     }
   }
   

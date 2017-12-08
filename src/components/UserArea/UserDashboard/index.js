@@ -18,6 +18,9 @@ export default class UserDashboard extends Component {
             <div>
                 <h1>Welcome {this.props.user.userData.display_name}!</h1>
                 <h2>{this.getRandomWelcomeMessage()}</h2>
+                <div>
+                    
+                </div>
             </div>
         )
     }
