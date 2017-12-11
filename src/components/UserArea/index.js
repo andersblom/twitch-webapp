@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, Redirect } from 'react-router-dom';
 
-import Login from './Login';
 import AuthWithTwitchApi from './AuthWithTwitchApi';
 import AuthWithTwitchApiWasSuccessful from './AuthWithTwitchApiWasSuccessful';
 import UserDashboard from './UserDashboard';
@@ -13,7 +12,6 @@ export default class UserArea extends Component {
 
         return (
             <div>
-                <Route exact path={`${currentUrl}/login`} component={Login} />
                 <Route exact path={`${currentUrl}/login/auth`} component={AuthWithTwitchApi}/>
                 <Route path={`${currentUrl}/login/auth/complete`} render={() => <AuthWithTwitchApiWasSuccessful redirect={this.props.history.push} logIn={this.props.logIn} />} />
                 <Route path={`${currentUrl}/dashboard`} render={(routerProps) => <UserDashboard {...routerProps} user={props.user} logOut={props.logOut} />} />

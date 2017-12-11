@@ -8,6 +8,7 @@ import FeaturedStreams from '../../containers/FeaturedStreams';
 import ListStreamsByGame from '../../containers/ListStreamsByGame';
 import WatchStream from '../../containers/WatchStream';
 import Authentication from '../../containers/Authentication';
+import Login from '../UserArea/Login';
 
 import './main.css';
 export default class Main extends Component {
@@ -65,6 +66,7 @@ export default class Main extends Component {
             } />
             <Route path="/watch/:streamerName" component={WatchStream} />
             <Route path="/user" component={Authentication} />
+            <Route path="/login" component={Login} />
         </div>
       </div>
     );
