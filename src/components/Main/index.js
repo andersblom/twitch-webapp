@@ -8,7 +8,10 @@ import FeaturedStreams from '../../containers/FeaturedStreams';
 import ListStreamsByGame from '../../containers/ListStreamsByGame';
 import WatchStream from '../../containers/WatchStream';
 import Authentication from '../../containers/Authentication';
+
 import Login from '../UserArea/Login';
+import AuthWithTwitchApi from '../UserArea/AuthWithTwitchApi';
+import AuthWithTwitchApiWasSuccessful from '../UserArea/AuthWithTwitchApiWasSuccessful';
 
 import './main.css';
 export default class Main extends Component {
@@ -66,7 +69,10 @@ export default class Main extends Component {
             } />
             <Route path="/watch/:streamerName" component={WatchStream} />
             <Route path="/user" component={Authentication} />
-            <Route path="/login" component={Login} />
+            
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/login/auth" component={AuthWithTwitchApi}/>
+            <Route path="/login/auth/complete" render={() => <AuthWithTwitchApiWasSuccessful redirect={this.props.history.push} logIn={this.props.logIn} />} />
         </div>
       </div>
     );

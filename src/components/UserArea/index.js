@@ -12,8 +12,6 @@ export default class UserArea extends Component {
 
         return (
             <div>
-                <Route exact path={`${currentUrl}/login/auth`} component={AuthWithTwitchApi}/>
-                <Route path={`${currentUrl}/login/auth/complete`} render={() => <AuthWithTwitchApiWasSuccessful redirect={this.props.history.push} logIn={this.props.logIn} />} />
                 <Route path={`${currentUrl}/dashboard`} render={(routerProps) => <UserDashboard {...routerProps} user={props.user} logOut={props.logOut} />} />
                 <Route path={`${currentUrl}/logout`} render={() => <div>I'll log you out.</div>} />
             </div>
