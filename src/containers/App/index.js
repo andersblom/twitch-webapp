@@ -9,8 +9,8 @@ import * as userActionCreators from '../../actions/userActionCreators';
 
 import Header from '../../components/Header';
 import Games from '../../components/Games';
-import FeaturedStreams from '../FeaturedStreams';
-import ListStreamsByGame from '../ListStreamsByGame';
+import FeaturedStreams from '../../components/FeaturedStreams';
+import ListStreamsByGame from '../../components/ListStreamsByGame';
 import WatchStream from '../WatchStream';
 import Authentication from '../Authentication';
 
