@@ -1,0 +1,50 @@
+.login__container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.login__panel {
+	box-sizing: border-box;
+	padding: 15px;
+	background-color: var(--white);
+	border-radius: 2px;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+	width: 600px;
+}
+
+.login__panel__header {
+	background-color: var(--twitch_purple);
+	width: 100%;
+	padding: 2em 5em;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 0 2em 0;
+}
+
+.login__panel__header img {
+	height: auto;
+	width: 220px;
+}
+
+.login__btn {
+	padding: 1em 0.7em;
+	font-size: 16px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.login__btn.primary {
+	background: var(--twitch_purple);
+	color: var(--white);
+	transition: 150ms opacity ease-in-out;
+}
+
+.login__btn.primary:hover {
+	opacity: 0.8;
+}
