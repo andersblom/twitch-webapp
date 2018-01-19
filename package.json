@@ -14,11 +14,18 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "sanitize-html": "^1.16.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "flow": "flow",
+    "flow:watch": "flow stop && flow start && watch flow",
     "build": "react-scripts build"
+  },
+  "devDependencies": {
+    "flow": "^0.2.3",
+    "flow-bin": "^0.63.1"
   }
 }
